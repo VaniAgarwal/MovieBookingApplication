@@ -1,0 +1,67 @@
+http://localhost:8080/user_app/v1/users?Content-Type=application/json     /**CreateUser
+
+{
+    "firstName": "Vani",
+    "lastName": "Agarwal",
+    "username": "hAdmin",
+    "password": "AUSh127#",
+    "dateOfBirth": "2020-04-26T05:30:00",
+    "phoneNumbers": ["1403688819"]
+}
+
+http://localhost:8080/user_app/v1/allUsers
+
+http://localhost:8080/user_app/v1/user/1
+
+
+http://localhost:8080/user_app/v1/user
+
+http://localhost:8080/user_app/v1/users/4
+
+
+http://localhost:8081/movie_app/v1/bookings/movie?content-Type=application/json
+
+{
+    "movieDTO":{
+        "movie_id":22
+    },
+    "userDTO":{
+        "userId":19,
+        "firstName":"Vaishnavi"
+    },
+    "theatreDTO":{
+        "theatreId":23,
+        "movieId":22
+    }
+}
+
+http://localhost:8081/movie_app/v1/movies
+
+{
+  "movieName": "Mela",
+  "movieDesc": "Two imprisoned men bond over a number of years, finding solace and friendship in a brutal prison environment.",
+  "releaseDate": "2024-09-22T00:00:00",
+  "duration": 200,
+  "coverPhotoUrl": "http://example.com/abcd.jpg",
+  "trailerUrl": "trailer"
+}
+
+http://localhost:8081/movie_app/v1/allMovies
+
+http://localhost:8082/theatre_app/v1/theatre?content-type
+
+{
+    "theatreName" : "PVR",
+    "movieId":14 
+}
+
+
+http://localhost:8082/theatre_app/v1/theatres/15/movie/14
+
+
+
+
+
+
+
+

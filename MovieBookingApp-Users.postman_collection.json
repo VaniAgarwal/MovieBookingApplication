@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "a2f57fd0-4626-4f35-b4ec-6b6a7d5ece20",
+		"name": "MovieBookingApp-Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29460623"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Vishwa\",\r\n    \"lastName\": \"Mohan\",\r\n    \"username\": \"VM_Admin1\",\r\n    \"password\": \"password\",\r\n    \"dateOfBirth\": \"2019-04-26T05:30:00\",\r\n    \"phoneNumbers\": [\"1234567890\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user_app/v1/users?Content-Type=application/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user_app",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user_app/v1/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user_app",
+						"v1",
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user_app/v1/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user_app",
+						"v1",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"firstName\": \"Vishwa\",\r\n    \"lastName\": \"Gupta\",\r\n    \"username\": \"VM_Admin1\",\r\n    \"password\": \"password\",\r\n    \"dateOfBirth\": \"2019-04-26T05:30:00\",\r\n    \"phoneNumbers\": [\r\n        1403975316\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user_app/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user_app",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user_app/v1/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user_app",
+						"v1",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book a movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieDTO\":{\r\n        \"movie_id\":22\r\n    },\r\n    \"userDTO\":{\r\n        \"userId\":21,\r\n        \"firstName\":\"Vani\"\r\n    },\r\n    \"theatreDTO\":{\r\n        \"theatreId\":23,\r\n        \"movieId\":22\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/movie_app/v1/bookings/movie?content-Type=application/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie_app",
+						"v1",
+						"bookings",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "content-Type",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movieName\": \"Freddy\",\r\n  \"movieDesc\": \"Two imprisoned men bond over a number of years, finding solace and friendship in a brutal prison environment.\",\r\n  \"releaseDate\": \"2024-09-22\",\r\n  \"duration\": 142,\r\n  \"coverPhotoUrl\": \"abc\",\r\n  \"trailerUrl\": \"trailer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/movie_app/v1/movies?content-Type=application/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movie_app",
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "content-Type",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMovies",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "createATheatre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"theatreName\" : \"IONOX\",\r\n    \"movieId\":14 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/theatre_app/v1/theatre?content-type",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"theatre_app",
+						"v1",
+						"theatre"
+					],
+					"query": [
+						{
+							"key": "content-type",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getATheatre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/theatre_app/v1/theatres/15/movie/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"theatre_app",
+						"v1",
+						"theatres",
+						"15",
+						"movie",
+						"14"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
